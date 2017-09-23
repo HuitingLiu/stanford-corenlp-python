@@ -1,4 +1,4 @@
-# Python interface to Stanford Core NLP tools v3.4.1
+# Python interface to Stanford Core NLP tools v3.8.0
 
 This is a Python wrapper for Stanford University's NLP group's Java-based [CoreNLP tools](http://nlp.stanford.edu/software/corenlp.shtml).  It can either be imported as a module or run as a JSON-RPC server. Because it uses many large trained models (requiring 3GB RAM on 64-bit machines and usually a few minutes loading time), most applications will probably want to run it as a server.
 
@@ -10,7 +10,7 @@ This is a Python wrapper for Stanford University's NLP group's Java-based [CoreN
 
 It depends on [pexpect](http://www.noah.org/wiki/pexpect) and includes and uses code from [jsonrpc](http://www.simple-is-better.org/rpc/) and [python-progressbar](http://code.google.com/p/python-progressbar/).
 
-It runs the Stanford CoreNLP jar in a separate process, communicates with the java process using its command-line interface, and makes assumptions about the output of the parser in order to parse it into a Python dict object and transfer it using JSON.  The parser will break if the output changes significantly, but it has been tested on **Core NLP tools version 3.4.1** released 2014-08-27.
+It runs the Stanford CoreNLP jar in a separate process, communicates with the java process using its command-line interface, and makes assumptions about the output of the parser in order to parse it into a Python dict object and transfer it using JSON.  The parser will break if the output changes significantly, but it has been tested on **Core NLP tools version 3.8.0** released 2017-06-09.
 
 ## Download and Usage
 
@@ -32,7 +32,7 @@ Optionally, you can specify a host or port:
 
 That will run a public JSON-RPC server on port 3456.
 
-Assuming you are running on port 8080, the code in `client.py` shows an example parse: 
+Assuming you are running on port 8080, the code in `client.py` shows an example parse:
 
     import jsonrpc
     from simplejson import loads
@@ -103,7 +103,7 @@ That returns a dictionary containing the keys `sentences` and `coref`. The key `
 	                              u'NamedEntityTag': u'O',
 	                              u'PartOfSpeech': u'.'}]]}],
 	u'coref': [[[[u'It', 1, 0, 0, 1], [u'Hello world', 0, 1, 0, 2]]]]}
-    
+
 To use it in a regular script (useful for debugging), load the module instead:
 
     from corenlp import *
@@ -129,12 +129,12 @@ The library supports [coreference resolution](http://en.wikipedia.org/wiki/Coref
 Note: wordnet doesn't seem to be supported using this approach.  Looks like you'll need Java.
 
 Download WordNet-3.0 Prolog:  http://wordnetcode.princeton.edu/3.0/WNprolog-3.0.tar.gz
-tar xvfz WNprolog-3.0.tar.gz 
+tar xvfz WNprolog-3.0.tar.gz
 
 -->
 
 
-## Questions 
+## Questions
 
 **Stanford CoreNLP tools require a large amount of free memory**.  Java 5+ uses about 50% more RAM on 64-bit machines than 32-bit machines.  32-bit machine users can lower the memory requirements by changing `-Xmx3g` to `-Xmx2g` or even less.
 If pexpect timesout while loading models, check to make sure you have enough memory and can run the server alone without your kernel killing the java process:
@@ -151,7 +151,7 @@ This is free and open source software and has benefited from the contribution an
 I gratefully welcome bug fixes and new features.  If you have forked this repository, please submit a [pull request](https://help.github.com/articles/using-pull-requests/) so others can benefit from your contributions.  This project has already benefited from contributions from these members of the open source community:
 
   * [Emilio Monti](https://github.com/emilmont)
-  * [Justin Cheng](https://github.com/jcccf) 
+  * [Justin Cheng](https://github.com/jcccf)
   * Abhaya Agarwal
 
 *Thank you!*
