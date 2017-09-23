@@ -23,14 +23,11 @@ To use this program you must [download](http://nlp.stanford.edu/software/corenlp
 	unzip stanford-corenlp-full-2014-08-27.zip
 
 Then launch the server:
+    You need specify to a host, a port, model directory and version:
 
-    python corenlp.py
+    python corenlp.py -H localhost -p 1998 -d ./stanford-corenlp-full-2017-06-09/ -v 3.8.0
 
-Optionally, you can specify a host or port:
-
-    python corenlp.py -H 0.0.0.0 -p 3456
-
-That will run a public JSON-RPC server on port 3456.
+That will run a public JSON-RPC server on port 1988.
 
 Assuming you are running on port 8080, the code in `client.py` shows an example parse:
 
