@@ -19,8 +19,8 @@ To use this program you must [download](http://nlp.stanford.edu/software/corenlp
 	sudo pip install pexpect unidecode
 	git clone git://github.com/dasmith/stanford-corenlp-python.git
 	cd stanford-corenlp-python
-	wget http://nlp.stanford.edu/software/stanford-corenlp-full-2014-08-27.zip
-	unzip stanford-corenlp-full-2014-08-27.zip
+	wget http://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip
+	unzip stanford-corenlp-full-2017-06-09.zip
 
 Then launch the server:
     You need specify to a host, a port, model directory and version:
@@ -107,7 +107,7 @@ To use it in a regular script (useful for debugging), load the module instead:
     corenlp = StanfordCoreNLP()  # wait a few minutes...
     corenlp.parse("Parse this sentence.")
 
-The server, `StanfordCoreNLP()`, takes an optional argument `corenlp_path` which specifies the path to the jar files.  The default value is `StanfordCoreNLP(corenlp_path="./stanford-corenlp-full-2014-08-27/")`.
+The server, `StanfordCoreNLP()`, takes two MANDATORY argument `corenlp_path` and `corenlp_version` which specifies the path to the jar files and the related version of the model.  The example looks like `StanfordCoreNLP(corenlp_path="./stanford-corenlp-full-2017-06-09/", corenlp_version='3.8.0')`.
 
 ## Coreference Resolution
 
