@@ -151,7 +151,7 @@ class StanfordCoreNLP(object):
         # if CoreNLP libraries are in a different directory,
         # change the corenlp_path variable to point to them
         if not corenlp_path:
-            corenlp_path = "./stanford-corenlp-full-2014-08-27/"
+            corenlp_path = "./stanford-corenlp-full-2017-06-09/"
 
         java_path = "java"
         classname = "edu.stanford.nlp.pipeline.StanfordCoreNLP"
